@@ -1,27 +1,60 @@
 # AngularApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
+# Proyecto de Frontend para Gestión de Clientes, Productos y Órdenes
+Este es un proyecto de frontend desarrollado en Angular que permite la gestión de clientes, productos y órdenes. Incluye varias vistas y formularios para realizar operaciones CRUD y visualizar datos.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Antes de comenzar, asegúrate de tener instalado:
 
-## Code scaffolding
+Node.js y npm
+Angular CLI 15.2.7
+Instalación
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Clona el repositorio en tu máquina local:
 
-## Build
+bash
+git clone (https://github.com/jerry-rodrigo/evaluacion-growBy-front.git)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Instala las dependencias del proyecto:
 
-## Running unit tests
+bash
+npm install
+Configuración
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Este proyecto necesita una API de backend para funcionar correctamente. Configura el archivo environment.ts en la carpeta src/environments para incluir la URL base de la API:
 
-## Running end-to-end tests
+# Ejecución
+Para iniciar el servidor de desarrollo, usa el siguiente comando:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+bash
+ng serve
+Luego, abre tu navegador y navega a http://localhost:4200 para ver la aplicación en funcionamiento.
 
-## Further help
+# Estructura de Rutas
+El proyecto cuenta con las siguientes rutas principales:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+/dashboard: Muestra la vista principal del panel de control.
+/clientes: Muestra la lista de clientes.
+/clientes/crear: Formulario para crear un nuevo cliente.
+/clientes/editar/:id: Formulario para editar un cliente existente.
+/productos: Muestra la lista de productos.
+/productos/crear: Formulario para crear un nuevo producto.
+/productos/editar/:id: Formulario para editar un producto existente.
+/ordenes: Muestra la lista de órdenes.
+/ordenes/crear: Formulario para crear una nueva orden.
+/ordenes/editar/:id: Formulario para editar una orden existente.
+
+# Redirección por defecto: Si no se ingresa una ruta válida, se redirige a /clientes.
+
+# Componentes Principales
+# DashboardComponent
+Descripción: Muestra una vista general del estado de la aplicación.
+
+# ClienteListComponent y ClienteFormComponent
+Descripción: Permiten listar, crear y editar clientes.
+
+# ProductListComponent y ProductFormComponent
+Descripción: Permiten listar, crear y editar productos.
+
+# OrdenListComponent y OrdenFormComponent
+Descripción: Permiten listar, crear y editar órdenes.
