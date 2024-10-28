@@ -1,0 +1,29 @@
+<div class="dashboard-container">
+    <h1>Dashboard</h1>
+  
+    <div class="card">
+      <h2>Total Productos</h2>
+      <p>{{ totalProductos }}</p>
+    </div>
+  
+    <div class="card">
+      <h2>Total Clientes</h2>
+      <p>{{ totalClientes }}</p>
+    </div>
+  
+    <div class="card">
+      <h2>Total Órdenes</h2>
+      <p>{{ totalOrdenes }}</p>
+    </div>
+  
+    <div *ngIf="errorMessage" class="error-message">
+      <p>{{ errorMessage }}</p>
+    </div>
+
+    <div class="button-container">
+        <button routerLink="/clientes" class="btn">Ir a Clientes</button>
+        <button routerLink="/productos" class="btn">Ir a Productos</button>
+        <button routerLink="/ordenes" class="btn">Ir a Órdenes</button>
+      </div>
+  </div>
+  

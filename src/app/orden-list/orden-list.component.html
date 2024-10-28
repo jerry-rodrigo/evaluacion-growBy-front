@@ -1,0 +1,33 @@
+<div class="mb-4">
+    <button (click)="irAFormularioCliente()" class="btn btn-primary">Crear Cliente</button>
+    <button (click)="irAFormularioProducto()" class="btn btn-success">Crear Producto</button>
+    <button (click)="irAFormularioOrden()" class="btn btn-success">Crear Orden</button>
+  </div>
+  
+  <h2 class="mb-4">{{ title }}</h2>
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Cantidad</th>
+        <th>Total</th>
+        <th>Fecha de Orden</th>
+        <th>Cliente</th>
+        <th>Producto</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let orden of ordenes">
+        <td>{{ orden.cantidad }}</td>
+        <td>{{ orden.total | currency }}</td>
+        <td>{{ orden.fechaOrden | date:'short' }}</td>
+        <td>{{ orden.cliente?.nombre }}</td>
+        <td>{{ orden.producto?.nombre }}</td>
+        <td>
+          <button (click)="editarOrden(orden.id)" *ngIf="orden.id !== undefined" class="btn btn-warning btn-sm">Editar</button>
+          <button (click)="eliminarOrden(orden.id)" *ngIf="orden.id !== undefined" class="btn btn-danger btn-sm">Eliminar</button>
+        </td>      
+      </tr>
+    </tbody>
+  </table>
+  

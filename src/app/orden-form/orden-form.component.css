@@ -1,0 +1,13 @@
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 10px;
+}

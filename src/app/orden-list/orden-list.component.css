@@ -1,0 +1,12 @@
+.table {
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    text-align: center;
+}
+
+.table th {
+    background-color: #343a40;
+    color: white;
+}

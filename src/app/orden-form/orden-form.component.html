@@ -1,0 +1,40 @@
+<form (ngSubmit)="onSubmit()" class="container mt-4" #ordenForm="ngForm">
+    <h2 class="mb-4">{{ isEditMode ? 'Actualizar' : 'Crear' }} Orden</h2>
+
+    <div class="form-group">
+        <label for="cliente">Cliente:</label>
+        <select id="cliente" [(ngModel)]="orden.cliente" name="cliente" class="form-control" required>
+            <option value="" disabled selected>Selecciona un cliente</option>
+            <option *ngFor="let cliente of clientes" [ngValue]="cliente">
+                {{ cliente.nombre }}
+            </option>
+        </select>
+        <div *ngIf="ordenForm.controls['cliente']?.invalid && (ordenForm.controls['cliente']?.touched || ordenForm.submitted)" class="text-danger">
+            El cliente es obligatorio.
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="producto">Producto:</label>
+        <select id="producto" [(ngModel)]="orden.producto" name="producto" class="form-control" required>
+            <option value="" disabled selected>Selecciona un producto</option>
+            <option *ngFor="let producto of productos" [ngValue]="producto">
+                {{ producto.nombre }}
+            </option>
+        </select>
+        <div *ngIf="ordenForm.controls['producto']?.invalid && (ordenForm.controls['producto']?.touched || ordenForm.submitted)" class="text-danger">
+            El producto es obligatorio.
+        </div>
+    </div>    
+
+    <div class="form-group">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" [(ngModel)]="orden.cantidad" name="cantidad" class="form-control" required>
+        <div *ngIf="ordenForm.controls['cantidad']?.invalid && (ordenForm.controls['cantidad']?.touched || ordenForm.submitted)" class="text-danger">
+            La cantidad es obligatoria.
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="ordenForm.invalid">
+        {{ isEditMode ? 'Actualizar' : 'Crear' }} Orden
+    </button>
+</form>

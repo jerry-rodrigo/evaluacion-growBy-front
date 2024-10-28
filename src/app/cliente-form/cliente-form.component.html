@@ -1,0 +1,43 @@
+<h2 class="text-center">Crear Cliente</h2>
+
+<div *ngIf="successMessage" class="alert alert-success">
+  {{ successMessage }}
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
+
+<form (ngSubmit)="onSubmit()" #clienteForm="ngForm" class="cliente-form">
+  <div class="form-group">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" required [(ngModel)]="cliente.nombre" name="nombre" class="form-control" />
+    <div *ngIf="clienteForm.submitted && !cliente.nombre" class="text-danger">
+      El nombre es requerido.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" required [(ngModel)]="cliente.email" name="email" class="form-control" />
+    <div *ngIf="clienteForm.submitted && !cliente.email" class="text-danger">
+      El email es requerido.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" required [(ngModel)]="cliente.telefono" name="telefono" class="form-control" />
+    <div *ngIf="clienteForm.submitted && !cliente.telefono" class="text-danger">
+      El teléfono es requerido.
+    </div>
+  </div>
+
+  <button type="submit" class="btn-guardar btn btn-primary" [disabled]="!clienteForm.valid">Guardar</button>
+</form>
+
+<div class="button-group mt-3">
+  <button class="btn-navegar btn btn-secondary" routerLink="/clientes">Lista de Clientes</button>
+  <button class="btn-navegar btn btn-secondary" routerLink="/productos">Lista de Productos</button>
+  <button class="btn-navegar btn btn-secondary" routerLink="/ordenes">Lista de Órdenes</button>
+  <button class="btn-navegar btn btn-secondary" routerLink="/dashboard">Dashboard</button>
+</div>
