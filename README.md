@@ -33,16 +33,16 @@ Luego, abre tu navegador y navega a http://localhost:4200 para ver la aplicació
 # Estructura de Rutas
 El proyecto cuenta con las siguientes rutas principales:
 
-/dashboard: Muestra la vista principal del panel de control.
-/clientes: Muestra la lista de clientes.
-/clientes/crear: Formulario para crear un nuevo cliente.
-/clientes/editar/:id: Formulario para editar un cliente existente.
-/productos: Muestra la lista de productos.
-/productos/crear: Formulario para crear un nuevo producto.
-/productos/editar/:id: Formulario para editar un producto existente.
-/ordenes: Muestra la lista de órdenes.
-/ordenes/crear: Formulario para crear una nueva orden.
-/ordenes/editar/:id: Formulario para editar una orden existente.
+- /dashboard: Muestra la vista principal del panel de control.
+- /clientes: Muestra la lista de clientes.
+- /clientes/crear: Formulario para crear un nuevo cliente.
+- /clientes/editar/:id: Formulario para editar un cliente existente.
+- /productos: Muestra la lista de productos.
+- /productos/crear: Formulario para crear un nuevo producto.
+- /productos/editar/:id: Formulario para editar un producto existente.
+- /ordenes: Muestra la lista de órdenes.
+- /ordenes/crear: Formulario para crear una nueva orden.
+- /ordenes/editar/:id: Formulario para editar una orden existente.
 
 # Redirección por defecto: Si no se ingresa una ruta válida, se redirige a /clientes.
 
